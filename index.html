@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ley de Amdahl</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header-ley">
+        <h1>Ley de Amdahl</h1>
+        <img src="logo.png" alt="Logo" id="logo" onerror="this.style.display='none'">
+    </header>
+
+    <div class="franja"></div>
+
+    <main>
+        <section id="seccion-explicacion">
+            <h2>¿Qué dice la ley?</h2>
+            <p>
+                La ley de Amdahl calcula cuánto cambia el tiempo total de ejecución cuando
+                solo una parte del sistema se mejora (o empeora). La parte que no cambia
+                limita la mejora total.
+            </p>
+            <p class="formula-general">
+                TEn = TEa × [(1 − fm) + fm / speedup] &nbsp;&nbsp;|&nbsp;&nbsp; Speedup global = TEa / TEn
+            </p>
+            <p class="leyenda">
+                <b>TEa</b>: tiempo de ejecución antiguo &nbsp;·&nbsp;
+                <b>TEn</b>: tiempo de ejecución nuevo &nbsp;·&nbsp;
+                <b>fm</b>: fracción mejorada (entre 0 y 1) &nbsp;·&nbsp;
+                <b>speedup</b>: cuántas veces más rápida queda esa fracción
+            </p>
+        </section>
+
+        <section id="seccion-partes">
+            <div id="seccion-unica-mejora" class="bloque">
+                <h2>Calcular el nuevo tiempo de ejecución</h2>
+
+                <div id="caja-1-mejora" class="caja-resultado">
+                    <div class="formula">TEn = TEa × [(1 − fm) + fm / speedup]</div>
+                    <div class="vacio">Completa los datos y pulsa Calcular.</div>
+                </div>
+
+                <form id="formulario-1-mejora" class="formulario">
+                    <label for="input-ta-1-mejora">Tiempo antiguo (TEa) en segundos</label>
+                    <input type="text" id="input-ta-1-mejora" inputmode="decimal" placeholder="Ej: 100">
+
+                    <label for="input-fm-1-mejora">Fracción mejorada (fm), entre 0 y 1</label>
+                    <input type="text" id="input-fm-1-mejora" inputmode="decimal" placeholder="Ej: 0.6">
+
+                    <label for="input-speedup-1-mejora">Speedup</label>
+                    <input type="text" id="input-speedup-1-mejora" inputmode="decimal" placeholder="Ej: 3">
+
+                    <div class="botones">
+                        <button type="submit" id="boton-enviar-1-mejora">Calcular</button>
+                        <button type="reset" id="boton-reset-1-mejora" class="secundario">Resetear</button>
+                    </div>
+                </form>
+
+                <div class="explicacion" id="explicacion-1-mejora">
+                    <h3>Explicación</h3>
+                    <p>Aquí aparecerá la interpretación de tu resultado.</p>
+                </div>
+            </div>
+
+            
+            <div id="seccion-multiple-mejora" class="bloque">
+                <h2>Fraccion mejorada y Fraccion no mejorada </h2>
+
+                <div id="caja-multiple-mejora" class="caja-resultado">
+                    <div id="barra-total"></div>
+                    <div id="texto-resultado" class="vacio">Ingresa el tiempo de cada parte y pulsa Calcular.</div>
+                </div>
+
+                <form id="formulario-multiple-mejora" class="formulario">
+                    <label for="input-mejorable">Fraccion mejorable (segundos)</label>
+                    <input type="text" id="input-mejorable" inputmode="decimal" placeholder="Ej: 60">
+
+                    <label for="input-no-mejorable">Fraccion no mejorable (segundos)</label>
+                    <input type="text" id="input-no-mejorable" inputmode="decimal" placeholder="Ej: 40">
+
+                    <div class="botones">
+                        <button type="submit" id="boton-enviar-multiple-mejora">Calcular</button>
+                        <button type="reset" id="boton-reset-multiple-mejora" class="secundario">Resetear</button>
+                    </div>
+                </form>
+
+                <div class="explicacion" id="explicacion-multiple-mejora">
+                    <h3>Explicación</h3>
+                    <p>Aquí aparecerá la interpretación de tu resultado.</p>
+                </div>
+            </div>
+        </section>
+
+    <div id="seccion-speedup" class="bloque">
+        <h2>Speedup</h2>
+
+        <div id="caja-speedup" class="caja-resultado">
+            <div class="formula">Speedup = TEa / TEn</div>
+            <div class="vacio">Ingresa TEa y TEn y pulsa Calcular.</div>
+        </div>
+
+        <form id="formulario-speedup" class="formulario">
+            <label for="input-ta-speedup">Tiempo antiguo (TEa) en segundos</label>
+            <input type="text" id="input-ta-speedup" inputmode="decimal" placeholder="Ej: 100">
+
+            <label for="input-ten-speedup">Tiempo nuevo (TEn) en segundos</label>
+            <input type="text" id="input-ten-speedup" inputmode="decimal" placeholder="Ej: 50">
+
+            <div class="botones">
+                <button type="submit" id="boton-enviar-speedup">Calcular</button>
+                <button type="reset" id="boton-reset-speedup" class="secundario">Resetear</button>
+            </div>
+        </form>
+
+        <div class="explicacion" id="explicacion-speedup">
+            <h3>Explicación</h3>
+            <p>Aquí aparecerá la interpretación de tu resultado.</p>
+        </div>
+    </div>
+
+    </main>
+
+    <div class="franja"></div>
+
+    <script src="code.js"></script>
+</body>
+</html>
