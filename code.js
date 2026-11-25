@@ -1,5 +1,4 @@
-
-
+// ---------- Utilidades ----------
 function leerNumero(selector) {
     const texto = document.querySelector(selector).value.trim().replace(",", ".");
     return texto === "" ? NaN : Number(texto);
@@ -11,7 +10,7 @@ function fmt(n) {
 
 const EXPLICACION_VACIA = `<h3>Explicación</h3><p>Aquí aparecerá la interpretación de tu resultado.</p>`;
 
-
+// ---------- BLOQUE 1: una sola parte se mejora/empeora ----------
 const formulariosimple = document.querySelector("#formulario-1-mejora");
 const caja = document.querySelector("#caja-1-mejora");
 const explicacion1 = document.querySelector("#explicacion-1-mejora");
@@ -79,7 +78,7 @@ formulariosimple.addEventListener("reset", () => {
     explicacion1.innerHTML = EXPLICACION_VACIA;
 });
 
-
+// ---------- BLOQUE 2: parte mejorable / parte no mejorable ----------
 const formularioMultiples = document.querySelector("#formulario-multiple-mejora");
 const barraTotal = document.querySelector("#barra-total");
 const textoResultado = document.querySelector("#texto-resultado");
@@ -152,6 +151,7 @@ formularioMultiples.addEventListener("reset", limpiarBloque2);
 
 limpiarBloque2();
 
+// ---------- BLOQUE 3: Speedup = TEa / TEn ----------
 const formularioSpeedup = document.querySelector("#formulario-speedup");
 const cajaSpeedup = document.querySelector("#caja-speedup");
 const explicacionSpeedup = document.querySelector("#explicacion-speedup");
@@ -188,7 +188,7 @@ formularioSpeedup.addEventListener("submit", (e) => {
         <div class="sustitucion">Speedup = ${fmt(ta)} / ${fmt(ten)}</div>
         <div class="resultado-final">
             <span>Speedup</span>
-            <span>x${fmt(speedup)}</span>
+            <strong>${fmt(speedup)}</strong>
         </div>`;
 
     let conclusion;
@@ -211,4 +211,3 @@ formularioSpeedup.addEventListener("reset", () => {
     cajaSpeedup.innerHTML = CAJA_SPEEDUP_INICIAL;
     explicacionSpeedup.innerHTML = EXPLICACION_VACIA;
 });
-

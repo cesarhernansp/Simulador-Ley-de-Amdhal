@@ -29,7 +29,7 @@ sobre su tiempo total de ejecución.
 - `indice.html`: estructura de la página
 - `style.css`: estilos
 - `code.js`: lógica de los cálculos
-- `logo.png`: logo de la página
+- `logo.png`: logo de la universidad Francisco De Paula Santander
 
 ## Tecnologías
 
